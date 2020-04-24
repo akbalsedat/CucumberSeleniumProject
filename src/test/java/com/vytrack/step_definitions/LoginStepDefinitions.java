@@ -10,7 +10,6 @@ public class LoginStepDefinitions {
 
     }
 
-<<<<<<< HEAD
     @Then("user logs in as store manager")
     public void user_logs_in_as_store_manager() {
         System.out.println("Login as store manager");
@@ -28,7 +27,8 @@ public class LoginStepDefinitions {
     @Then("user logs in as sale manager")
     public void user_logs_in_as_sale_manager() {
         System.out.println("User logs in as sale manager");
-=======
+    }
+    
     @When("user logs in as a sales manager")
     public void user_logs_in_as_a_sales_manager() {
         System.out.println("Login as sales manager");
@@ -58,6 +58,5 @@ public class LoginStepDefinitions {
         System.out.printf("Login with username %s and %s password\n", string, string2);
         loginPage.login(string, string2);
         Assert.assertEquals("Dashboard", Driver.getDriver().getTitle());
->>>>>>> New Calendar Future File
     }
 }
