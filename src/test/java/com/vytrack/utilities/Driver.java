@@ -1,14 +1,10 @@
 package com.vytrack.utilities;
 
-<<<<<<< HEAD
-public class Driver {
-=======
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class Driver {
 
@@ -51,12 +47,6 @@ public class Driver {
                     WebDriverManager.firefoxdriver().setup();
                     driverPool.set(new FirefoxDriver());
                     break;
-                case "firefoxheadless":
-                    WebDriverManager.firefoxdriver().setup();
-                    FirefoxOptions firefoxOptions = new FirefoxOptions();
-                    firefoxOptions.setHeadless(true);
-                    driverPool.set(new FirefoxDriver(firefoxOptions));
-                    break;
                 default:
                     throw new RuntimeException("Wrong browser name!");
             }
@@ -93,12 +83,6 @@ public class Driver {
                     WebDriverManager.firefoxdriver().setup();
                     driverPool.set(new FirefoxDriver());
                     break;
-                case "firefoxheadless":
-                    WebDriverManager.firefoxdriver().setup();
-                    FirefoxOptions firefoxOptions = new FirefoxOptions();
-                    firefoxOptions.setHeadless(true);
-                    driverPool.set(new FirefoxDriver(firefoxOptions));
-                    break;
                 default:
                     throw new RuntimeException("Wrong browser name!");
             }
@@ -112,5 +96,4 @@ public class Driver {
             driverPool.remove();
         }
     }
->>>>>>> New Calendar Future File
 }
