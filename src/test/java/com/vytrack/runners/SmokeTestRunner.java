@@ -2,6 +2,7 @@ package com.vytrack.runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
@@ -10,14 +11,14 @@ import org.junit.runner.RunWith;
         features = "src/test/resources",
         dryRun = false,
         strict = false,
-        tags = "@scenario_outline_2",
+        tags = "@smoke_test",
         plugin = {
-                "html:target/default-report",
-                "json:target/cucumber1.json"
+                "html:target/smoke_test_default-report",
+                "json:target/cucumber1.json",
+                "rerun:target/rerun.txt"
         }
 
 )
-public class CucumberRunner {
-
+public class SmokeTestRunner extends AbstractTestNGCucumberTests {
 
 }
