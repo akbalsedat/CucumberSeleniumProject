@@ -13,8 +13,8 @@ import org.junit.runner.RunWith;
         tags = "not @smoke_test",
         plugin = {
                 "html:target/default-report-for-regression",
-                "json:target/regression.json",
-                "rerun:target/rerun.txt"
+                "json:target/cucumber_regression.json",
+                "rerun:target/rerun_regression.txt"
         }
 
 )
