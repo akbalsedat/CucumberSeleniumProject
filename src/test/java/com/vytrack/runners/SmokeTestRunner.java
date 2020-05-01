@@ -10,7 +10,8 @@ import org.junit.runner.RunWith;
         features = "src/test/resources",
         dryRun = false,
         strict = false,
-        tags = "@smoke_test",
+        // to exclude smoke test scenarios
+        tags = "not @smoke_test",
         plugin = {
                 "html:target/smoke_test_default-report",
                 "json:target/cucumber1.json",
