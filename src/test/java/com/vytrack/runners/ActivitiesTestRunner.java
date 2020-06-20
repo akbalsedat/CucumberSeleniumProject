@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
         glue = "com/vytrack/step_definitions",
         features = "src/test/resources/features/activities",
         dryRun = false,
-        strict = false,
-        tags = "A",
+        strict = true,
+        tags = "@activities",
         plugin = {
                 "html:target/default-report",
                 "json:target/cucumber2.json"

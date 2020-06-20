@@ -55,7 +55,7 @@ public class Driver {
                     break;
                 case "chrome-remote":
                     try {
-                        URL url = new URL("http://3.83.103.229:4444/wd/hub");
+                        URL url = new URL("http://localhost:4444/wd/hub");
                         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
                         desiredCapabilities.setBrowserName(BrowserType.CHROME);
                         desiredCapabilities.setPlatform(Platform.ANY);
@@ -68,6 +68,17 @@ public class Driver {
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     driverPool.set(new FirefoxDriver());
+                    break;
+                case "firefox-remote":
+                    try{
+                    URL url = new URL("http://localhost:4444/wd/hub");
+                    DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+                    desiredCapabilities.setBrowserName(BrowserType.FIREFOX);
+                    desiredCapabilities.setPlatform(Platform.ANY);
+                    driverPool.set(new RemoteWebDriver(url, desiredCapabilities));
+            }catch (MalformedURLException exception){
+                exception.printStackTrace();
+            }
                     break;
                 default:
                     throw new RuntimeException("Wrong browser name!");
