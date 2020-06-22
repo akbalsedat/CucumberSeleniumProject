@@ -17,6 +17,7 @@ public class Driver {
 
     //same for everyone
     private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<>();
+    private static final String GRID_URL = "http://52.201.185.199:4444/wd/hub";
 
     //so no one can create object of Driver class
     //everyone should call static getter method instead
@@ -55,7 +56,7 @@ public class Driver {
                     break;
                 case "chrome-remote":
                     try {
-                        URL url = new URL("http://localhost:4444/wd/hub");
+                        URL url = new URL(GRID_URL);
                         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
                         desiredCapabilities.setBrowserName(BrowserType.CHROME);
                         desiredCapabilities.setPlatform(Platform.ANY);
@@ -71,7 +72,7 @@ public class Driver {
                     break;
                 case "firefox-remote":
                     try{
-                    URL url = new URL("http://localhost:4444/wd/hub");
+                    URL url = new URL(GRID_URL);
                     DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
                     desiredCapabilities.setBrowserName(BrowserType.FIREFOX);
                     desiredCapabilities.setPlatform(Platform.ANY);
