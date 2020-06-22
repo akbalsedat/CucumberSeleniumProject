@@ -12,7 +12,7 @@ Feature: Login
   @sales_manager
   Scenario: Login as sales manager and verify that title is Dashboard
     When user logs in as a sales manager
-    Then user should verify that title is a Dashboard
+    Then user should verify that title is a Dashboar
 
   @store_manager
   Scenario: Login as store manager and verify that title is Dashboard
