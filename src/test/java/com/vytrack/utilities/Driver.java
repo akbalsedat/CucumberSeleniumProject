@@ -17,7 +17,7 @@ public class Driver {
 
     //same for everyone
     private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<>();
-    private static final String GRID_URL = "http://52.201.185.199:4444/wd/hub";
+    private static final String GRID_URL = "http://100.25.139.77:4444/wd/hub";
 
     //so no one can create object of Driver class
     //everyone should call static getter method instead
